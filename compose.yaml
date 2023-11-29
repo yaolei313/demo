@@ -1,0 +1,27 @@
+services:
+  mysql:
+    container_name: mysql8
+    image: mysql:8.0
+    restart: on-failure
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: root123
+    volumes:
+      - ./db/my.cnf:/etc/my.cnf
+      - ./db/data/:/var/lib/mysql
+      - ./db/script/:/docker-entrypoint-initdb.d/
+    ports:
+      - 13306:3306
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+
+  demo:
+    build: .
+    container_name: user_service
+    ports:
+      - 18080:8080
+    depends_on:
+      - mysql

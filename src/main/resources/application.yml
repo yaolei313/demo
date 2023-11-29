@@ -1,0 +1,38 @@
+server:
+  servlet:
+    context-path: /
+  shutdown: graceful
+  port: 8080
+
+spring:
+  main:
+    banner-mode: off
+  aop:
+    proxy-target-class: true
+  profiles:
+    active: local
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
+# Actuator endpoints
+management:
+  endpoints:
+    jmx:
+      exposure:
+        exclude: '*'
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+mybatis:
+  configuration:
+    cache-enabled: false
+    local-cache-scope: statement
+    shrink-whitespaces-in-sql: true
+  mapper-locations: classpath*:mapper/*.xml
+

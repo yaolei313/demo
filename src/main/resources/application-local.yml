@@ -1,0 +1,18 @@
+# 日志
+logging:
+  config: classpath:logback-local.xml
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:13306/study?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: study
+    password: study123
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      max-lifetime: 290000 # 4min50s
+      validation-timeout: 250 # 250ms
+      connection-timeout: 500 # 500ms
+      initialization-fail-timeout: 10000 # 10s
+
