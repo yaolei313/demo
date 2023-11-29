@@ -2,7 +2,7 @@ package com.yao.app.demo.server.http.vo;
 
 public class UserInfoVo {
 
-    private long id;
+    private long userId;
 
     private String nickname;
 
@@ -12,12 +12,12 @@ public class UserInfoVo {
 
     private Long updateTime;
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getNickname() {

@@ -13,6 +13,7 @@ public enum ResultCodeEnum {
 
     private ResultCodeEnum(int code, String message) {
         this.code = code;
+        this.message = message;
     }
 
     public int getCode() {

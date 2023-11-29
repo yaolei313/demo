@@ -1,9 +1,10 @@
 package com.yao.app.demo.server.http.controller;
 
 import com.yao.app.demo.biz.UserService;
+import com.yao.app.demo.server.http.vo.RegisterReqVo;
+import com.yao.app.demo.server.http.vo.RegisterRspVo;
 import com.yao.app.demo.server.http.vo.ResponseVo;
 import com.yao.app.demo.server.http.vo.UserInfoVo;
-import com.yao.app.demo.server.http.vo.UserRegisterVo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UserController {
 
     @Operation(summary = "注册一个新用户")
     @RequestMapping(path = "/users", method = RequestMethod.POST)
-    public ResponseVo<Long> create(@RequestBody UserRegisterVo vo) {
+    public ResponseVo<RegisterRspVo> create(@RequestBody RegisterReqVo vo) {
         return userService.register(vo);
     }
 

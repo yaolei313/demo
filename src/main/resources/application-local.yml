@@ -5,7 +5,7 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:13306/study?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:13306/study?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: study
     password: study123
     hikari:
@@ -16,3 +16,7 @@ spring:
       connection-timeout: 500 # 500ms
       initialization-fail-timeout: 10000 # 10s
 
+  mail:
+    host: 127.0.0.1
+    port: 10025
+    username: demo-no-reply@gmail.com

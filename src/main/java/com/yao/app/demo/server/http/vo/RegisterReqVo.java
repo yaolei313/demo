@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Schema(description = "用户注册参数")
 @ToString
-public class UserRegisterVo {
+public class RegisterReqVo {
 
     @Schema(required = true, description = "昵称", maxLength = 32)
     private String nickname;

@@ -18,10 +18,26 @@ services:
       --explicit_defaults_for_timestamp=true
       --lower_case_table_names=1
 
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      # web port
+      - '15000:80'
+      # SMTP port
+      - '10025:25'
+      # IMAP port
+      - '10143:143'
+    environment:
+      - ServerOptions__HostName=smtp4dev
+      #- ServerOptions__NumberOfMessagesToKeep=100
+
   demo:
     build: .
+    image: demo:v0.4
     container_name: user_service
     ports:
       - 18080:8080
     depends_on:
       - mysql
+      - smtp4dev
