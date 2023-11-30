@@ -11,10 +11,7 @@ spring:
     hikari:
       maximum-pool-size: 5
       minimum-idle: 1
-      max-lifetime: 290000 # 4min50s
-      validation-timeout: 250 # 250ms
-      connection-timeout: 500 # 500ms
-      initialization-fail-timeout: 10000 # 10s
+      max-lifetime: 60000
 
   mail:
     host: 127.0.0.1

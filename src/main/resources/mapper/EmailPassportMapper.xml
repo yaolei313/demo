@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yao.app.demo.dependency.mysql.mapper.EmailPassportMapper">
+  <resultMap id="BaseResultMap" type="com.yao.app.demo.dependency.mysql.bean.EmailPassport">
+    <id column="id" jdbcType="BIGINT" property="id"/>
+    <result column="email" jdbcType="VARCHAR" property="email"/>
+    <result column="user_id" jdbcType="BIGINT" property="userId"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, email, user_id
+  </sql>
+
+  <select id="selectUserIdByEmail" parameterType="java.lang.String" resultType="long">
+    select user_id
+    from email_passport
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByEmail" parameterType="java.lang.String">
+    delete
+    from email_passport
+    where email = #{email,jdbcType=VARCHAR}
+  </delete>
+
+  <insert id="insert" parameterType="com.yao.app.demo.dependency.mysql.bean.EmailPassport">
+    insert into email_passport (email, user_id)
+    values (#{email,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
+  </insert>
+</mapper>

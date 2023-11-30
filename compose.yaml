@@ -34,10 +34,14 @@ services:
 
   demo:
     build: .
-    image: demo:v0.4
+    image: demo:v0.1
     container_name: user_service
     ports:
       - 18080:8080
     depends_on:
       - mysql
       - smtp4dev
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/study?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      - SPRING_MAIL_HOST=smtp4dev
+      - SPRING_MAIL_PORT=25

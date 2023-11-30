@@ -1,21 +1,28 @@
 package com.yao.app.demo.dependency.mysql.bean;
 
 /**
- * 数据库表：user
- * 数据库注释: 
- * 
+ * 数据库表：user 数据库注释:
+ *
  * @author yao
  * @date 2023-11-28 20:01:16
- *
  */
 public class User {
+
     /**
      * <pre>
-     * 
+     *
      * 表字段 : user.id
      * </pre>
      */
     private Long id;
+
+    /**
+     * <pre>
+     * 用户id
+     * 表字段 : user.user_id
+     * </pre>
+     */
+    private Long userId;
 
     /**
      * <pre>
@@ -63,6 +70,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getNickname() {

@@ -24,9 +24,5 @@ public class Results {
 
     public static final ResponseVo INVALID_REQUEST = fail(ResultCodeEnum.INVALID_REQUEST, "invalid request");
 
-    public static final ResponseVo ILLEGAL_EMAIL = fail(ResultCodeEnum.INVALID_REQUEST, "illegal email address");
-
-    public static final ResponseVo ILLEGAL_NICKNAME = fail(ResultCodeEnum.INVALID_REQUEST, "illegal nickname");
-
     public static final ResponseVo EMAIL_REGISTERED = fail(ResultCodeEnum.EMAIL_REGISTERED, null);
 }
