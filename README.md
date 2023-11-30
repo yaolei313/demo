@@ -20,7 +20,7 @@ docker-compose up -d
     * -100 invalid request
     * -101 email already register
 
-### mock stmp server
+### mock smtp server
 
 * open url `http://localhost:15000/` in browser
 * after registering a user, you will find a welcome email in above console.
